@@ -38,5 +38,7 @@ class external_url {
 
 function local_easyappointments_before_http_headers() {
     global $CFG, $PAGE;
-    $PAGE->primarynav->add(get_string('lessons', 'local_easyappointments'), new external_url('/book/index.php/backend'), navigation_node::TYPE_ROOTNODE, 'easyappointments-schedule');
+    if (isloggedin() && !isguestuser()) {
+        $PAGE->primarynav->add(get_string('lessons', 'local_easyappointments'), new external_url('/book/index.php/backend'), navigation_node::TYPE_ROOTNODE, 'easyappointments-schedule');
+    }
 }
