@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/easyappointments/db" VERSION="2020042800" COMMENT="Tables used to sync between easy!appointments and moodle"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../../lib/xmldb/xmldb.xsd"
+>
+    <TABLES>
+        <TABLE NAME="ea_sync" COMMENT="Table used to sync between easy!appointments and moodle">
+            <FIELDS>
+                <FIELD NAME="easyappointments_id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="provider_calendar_id" TYPE="char" LENGTH="255" DEFAULT="" SEQUENCE="false"/>
+                <FIELD NAME="student_calendar_id" TYPE="char" LENGTH="255" DEFAULT="" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="easyappointments_id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="easyappointments_id_idx" UNIQUE="true" FIELDS="easyappointments_id"/>
+                <INDEX NAME="provider_calendar_id_idx" UNIQUE="false" FIELDS="provider_calendar_id"/>
+                <INDEX NAME="student_calendar_id_idx" UNIQUE="false" FIELDS="student_calendar_id"/>
+            </INDEXES>
+        </TABLE>
+    </TABLES>
+</XMLDB>

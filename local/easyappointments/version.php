@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2024010101;
+$plugin->version = 2024010114;
 $plugin->requires = 2023042405.03;
 $plugin->component = 'local_easyappointments';
 $plugin->maturity = MATURITY_ALPHA;
